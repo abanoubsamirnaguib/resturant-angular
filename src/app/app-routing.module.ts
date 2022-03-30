@@ -1,3 +1,8 @@
+import { ContentusComponent } from './web/contentus/contentus.component';
+import { ShopComponent } from './web/shop/shop.component';
+import { GalaryComponent } from './web/galary/galary.component';
+import { MenuComponent } from './web/menu/menu.component';
+import { HomeComponent } from './web/home/home.component';
 import { AddfoodComponent } from './pages/post/addfood/addfood.component';
 import { AddComponent } from './pages/post/add/add.component';
 import { RegisterComponent } from './pages/user/register/register.component';
@@ -8,6 +13,7 @@ import { SingleComponent } from './pages/user/single/single.component';
 import { AllComponent } from './pages/user/all/all.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { homedir } from 'os';
 
 const routes: Routes = [
   // {path:"home", component:HomeComponent},
@@ -23,7 +29,12 @@ const routes: Routes = [
        { path: 'edit/:id', component: EditComponent },
        { path: 'logout/:id', component: LogoutComponent },
      ]
-   }
+   },
+   {path:"home", component:HomeComponent},
+   {path:"menu", component:MenuComponent},
+   {path:"galary", component:GalaryComponent},
+   {path:"shop", component:ShopComponent},
+   {path:"contentus", component:ContentusComponent},
 ];
 
 @NgModule({
