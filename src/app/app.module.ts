@@ -17,6 +17,9 @@ import { AddfoodComponent } from './pages/post/addfood/addfood.component';
 import { LogoutComponent } from './pages/user/logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './web/home/home.component';
+import { MenuComponent } from './web/menu/menu.component';
+import { ShopComponent } from './web/shop/shop.component';
+import { GalaryComponent } from './web/galary/galary.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { HomeComponent } from './web/home/home.component';
     AddComponent,
     AddfoodComponent,
     LogoutComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    ShopComponent,
+    GalaryComponent
   ],
   imports: [
     BrowserModule,
