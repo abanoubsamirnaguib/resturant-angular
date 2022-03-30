@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>address</th>
+            <th>phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;let i = index">
+            <td>{{i}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.gender}}</td>
+            <td>
+                <ng-container *ngFor="let addr of user.address;">
+                    {{addr}}
+                </ng-container>
+            </td>
+            <td>
+                <ng-container *ngFor="let phon of user.phone;">
+            <td> {{phon}}</td>
+            </ng-container>
+            </td>
+    </tbody>
+</table>

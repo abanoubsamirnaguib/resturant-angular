@@ -1,0 +1,18 @@
+<nav class="nav justify-content-center" *ngIf="_user.islogin">
+  <a class="nav-link" routerLink="user/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >all user</a>
+  <a class="nav-link " routerLink="user/profile" routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact:true}" >profile</a>
+  <a class="nav-link " routerLink="user/add" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >add</a>
+  <a class="nav-link " routerLink="user/addFood" routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact:true}" >addfood</a>
+    <span>{{_user.userdata.name}}</span>
+  <a class="nav-link " routerLink="user/logout" >logout</a>
+
+</nav>
+
+<nav class="nav justify-content-center" *ngIf="!_user.islogin">
+  <a class="nav-link " routerLink="user/register" routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact:true}">register</a>
+  <a class="nav-link " routerLink="user/login" routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact:true}">login</a>
+</nav>
