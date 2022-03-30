@@ -1,3 +1,4 @@
+import { CartComponent } from './web/cart/cart.component';
 import { ContentusComponent } from './web/contentus/contentus.component';
 import { ShopComponent } from './web/shop/shop.component';
 import { GalaryComponent } from './web/galary/galary.component';
@@ -13,7 +14,6 @@ import { SingleComponent } from './pages/user/single/single.component';
 import { AllComponent } from './pages/user/all/all.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { homedir } from 'os';
 
 const routes: Routes = [
   // {path:"home", component:HomeComponent},
@@ -35,6 +35,7 @@ const routes: Routes = [
    {path:"galary", component:GalaryComponent},
    {path:"shop", component:ShopComponent},
    {path:"contentus", component:ContentusComponent},
+   {path:"cart", component:CartComponent},
 ];
 
 @NgModule({
