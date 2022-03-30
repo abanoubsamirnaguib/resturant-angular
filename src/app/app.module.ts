@@ -20,6 +20,8 @@ import { HomeComponent } from './web/home/home.component';
 import { MenuComponent } from './web/menu/menu.component';
 import { ShopComponent } from './web/shop/shop.component';
 import { GalaryComponent } from './web/galary/galary.component';
+import { CartComponent } from './web/cart/cart.component';
+import { ContentusComponent } from './web/contentus/contentus.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { GalaryComponent } from './web/galary/galary.component';
     HomeComponent,
     MenuComponent,
     ShopComponent,
-    GalaryComponent
+    GalaryComponent,
+    CartComponent,
+    ContentusComponent
   ],
   imports: [
     BrowserModule,
