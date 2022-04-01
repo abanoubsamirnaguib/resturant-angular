@@ -23,4 +23,10 @@ export class foodService {
   deleteFood(id: string): Observable<any> {
     return this._http.delete(this.url + "/delete/" + id)
   }
+  addFood(data:any): Observable<any> {
+    return this._http.post(this.url + "/add/" , data)
+  }
+  uploadImg(data:any): Observable<any> {
+    return this._http.post(this.url + "/addFoodPic" , data)
+  }
 }

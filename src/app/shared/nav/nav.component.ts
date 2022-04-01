@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './../../servies/user.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public _user: UserService) { }
+  constructor(public _user: UserService,private _routes:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,7 @@ export class NavComponent implements OnInit {
         this._user.islogin = false
         localStorage.removeItem("apptoken")
         console.log("logout")
+this._routes.navigateByUrl("user/All")
       }
     })
   }

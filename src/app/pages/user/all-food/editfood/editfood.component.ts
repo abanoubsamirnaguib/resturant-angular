@@ -24,10 +24,9 @@ food:any={
   ngOnInit(): void {
   }
 
-  onSubmit(register: NgForm) {
-    console.log(register);
-    if (register.valid) {
-
+  onSubmit(edit: NgForm) {
+    console.log(edit);
+    if (edit.valid) {
       this._food.editFood(this._router.snapshot.params['id'], this.food).subscribe(
         {
           next: (res) => { console.log(res); },
