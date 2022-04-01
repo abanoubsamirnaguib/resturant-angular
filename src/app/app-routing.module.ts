@@ -1,3 +1,4 @@
+import { FoodComponent } from './web/shop/food/food.component';
 import { EditfoodComponent } from './pages/user/all-food/editfood/editfood.component';
 import { AllFoodComponent } from './pages/user/all-food/all-food.component';
 import { EdituserComponent } from './pages/user/all/edit/edituser/edituser.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
    {path:"shop", component:ShopComponent},
    {path:"contentus", component:ContentusComponent},
    {path:"cart", component:CartComponent},
+   {path:"food", component:FoodComponent},
 ];
 
 @NgModule({

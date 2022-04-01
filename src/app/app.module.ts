@@ -25,6 +25,7 @@ import { ContentusComponent } from './web/contentus/contentus.component';
 import { EdituserComponent } from './pages/user/all/edit/edituser/edituser.component';
 import { AllFoodComponent } from './pages/user/all-food/all-food.component';
 import { EditfoodComponent } from './pages/user/all-food/editfood/editfood.component';
+import { FoodComponent } from './web/shop/food/food.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { EditfoodComponent } from './pages/user/all-food/editfood/editfood.compo
     ContentusComponent,
     EdituserComponent,
     AllFoodComponent,
-    EditfoodComponent
+    EditfoodComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@
 </section> -->
 
 
-<div class="fixed-header-box sticky-header-state-reset" *ngIf="_user.isAdmin">
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
       <div class="header-contents">
@@ -139,7 +139,7 @@
   </header>
 </div>
 
-<div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
       <div class="header-contents">
@@ -201,6 +201,17 @@
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
                       routerLink="shop" tabindex="0">Shop</a></li>
+
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
+                      routerLink="food" tabindex="0">food</a></li>
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
+                      routerLink="cart" tabindex="0">cart</a></li>
                   <li
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
