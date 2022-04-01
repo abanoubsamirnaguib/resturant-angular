@@ -15,7 +15,7 @@
         <tr *ngFor="let food of foods; let i = index">
             <td>{{i}}</td>
             <td>{{food.name}}</td>
-            <td class="w-25"><img class="" [src]="food.image??'assets/img/photo-gourmet-4.jpg'" alt=""> </td>
+            <td class="w-25"><img class="" [src]="food.image?('http://localhost:3000/'+food.image):'assets/img/photo-gourmet-4.jpg'" alt=""> </td>
             <td>{{food.descreption}}</td>
             <td>{{food.price}}</td>
             <td>{{food.rate}}</td>

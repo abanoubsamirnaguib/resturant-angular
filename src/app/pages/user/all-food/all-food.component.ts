@@ -20,6 +20,12 @@ export class AllFoodComponent implements OnInit {
   ngOnInit(): void {}
   delete(id: string) {
     console.log(id);
-    // this._food.deleteFood(id)
+    this._food.deleteFood(id).subscribe({
+      next:(res)=>{console.log(res,"deleted");},
+      error:(err)=>{console.log(err);},
+      complete:()=>{
+        this.foods=this.foods.filter((f:any)=>f._id != id) 
+      }
+    })
   }
 }

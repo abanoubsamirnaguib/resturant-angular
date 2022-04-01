@@ -29,4 +29,7 @@ export class foodService {
   uploadImg(data:any): Observable<any> {
     return this._http.post(this.url + "/addFoodPic" , data)
   }
+  changeImg(id:string , data:any): Observable<any> {
+    return this._http.patch(this.url + "/changePic/"+id, data )
+  }
 }

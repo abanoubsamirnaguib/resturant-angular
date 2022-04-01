@@ -20,6 +20,12 @@ export class AllComponent implements OnInit {
 
   delete(id: string) {
     console.log(id);
-    // this._user.deleteUser(id)
+    this._user.deleteUser(id).subscribe({
+      next:(res)=>{console.log(res,"deleted");},
+      error:(err)=>{console.log(err);},
+      complete:()=>{
+        this.users=this.users.filter((f:any)=>f._id != id) 
+      }
+    })
   }
 }

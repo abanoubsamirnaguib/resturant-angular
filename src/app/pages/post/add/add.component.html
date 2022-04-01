@@ -30,6 +30,13 @@
             <div class="col-sm-1-12">
                 <input type="text" class="form-control" name="address" id="address" placeholder="" ngModel #address="ngModel">
             </div>
+            
+            <label for="inputName" class="col-sm-1-12 col-form-label">image</label>
+            <div class="col-sm-1-12">
+                <input type="file" class="form-control" name="filePic" id="filePic" placeholder=""
+                ngModel  #filePic="ngModel" (change)="onUploadFile($event)">
+            </div>
+
             <div class="form-check form-check-inline">gender:
                 <label class="form-check-label">male
                     <input class="form-radio-input" type="radio" name="gender"  value="male" ngModel #gender="ngModel" required>

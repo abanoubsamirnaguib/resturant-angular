@@ -28,7 +28,6 @@
   </nav>
 </section> -->
 
-
 <div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
@@ -36,7 +35,7 @@
         <div class="first-row">
           <div class="logo-wrapper">
             <div class="logo-tagline">
-              <a routerLink="/" title="Délicious" class="logo text-logo" style="min-width:0px">Lina </a>
+              <a routerLink="/" title="lina" class="logo text-logo" style="min-width:0px">Lina </a>
             </div>
 
           </div>
@@ -61,24 +60,24 @@
                   data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="900"
                   data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300"
                   data-hover-intent-interval="100">
-                  <li *ngIf="_user.islogin" 
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-11673'><a class="mega-menu-link"
-                    routerLink="user/All" aria-haspopup="true" aria-expanded="false" tabindex="0">All User<span
+                      routerLink="user/All" aria-haspopup="true" aria-expanded="false" tabindex="0">All User<span
                         class="mega-indicator"></span></a>
 
                   </li>
 
-                  <li *ngIf="_user.islogin" 
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-8021'><a class="mega-menu-link"
                       routerLink="user/AllFood" aria-haspopup="true" aria-expanded="false" tabindex="0">Menu<span
                         class="mega-indicator"></span></a>
                   </li>
-   
-                  <li *ngIf="_user.islogin" 
+
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-8021'><a class="mega-menu-link"
@@ -86,7 +85,7 @@
                         class="mega-indicator"></span></a>
                   </li>
 
-                  <li *ngIf="_user.islogin" 
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7884'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-7884'><a class="mega-menu-link"
@@ -94,17 +93,17 @@
                         class="mega-indicator"></span></a>
                   </li>
 
-                  <li *ngIf="_user.islogin" 
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
-                    routerLink="user/addFood" tabindex="0">addFood</a></li>
-                    <!-- routerLink="user/logout" -->
-                  <li *ngIf="_user.islogin" 
+                      routerLink="user/addFood" tabindex="0">addFood</a></li>
+                  <!-- routerLink="user/logout" -->
+                  <li *ngIf="_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
-                       (click)="logout()" tabindex="0">logout
+                      (click)="logout()" tabindex="0">logout
                     </a></li>
                   <li *ngIf="!_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
@@ -218,13 +217,21 @@
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
                       routerLink="contentus" tabindex="0">Contact
                       Us</a></li>
-                  <li
+
+                  <li *ngIf="_user.islogin"
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      (click)="logout()" tabindex="0">logout
+                    </a></li>
+
+                  <li *ngIf="!_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
                       routerLink="user/register" tabindex="0">register
                     </a></li>
-                  <li
+                  <li *ngIf="!_user.islogin"
                     class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
                     routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
                     [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"

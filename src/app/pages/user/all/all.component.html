@@ -3,6 +3,7 @@
         <tr>
             <th>#</th>
             <th>name</th>
+            <th>image</th>
             <th>email</th>
             <th>gender</th>
             <th>address</th>
@@ -14,11 +15,14 @@
         <tr *ngFor="let user of users;let i = index">
             <td>{{i}}</td>
             <td>{{user.name}}</td>
+            <td class="w-25 h-25"   ><img class="w-25 h-25"
+                    [src]="user.image?('http://localhost:3000/'+ user.image):'assets/img/photo-gourmet-4.jpg'" alt="">
+            </td>
             <td>{{user.email}}</td>
             <td>{{user.gender}}</td>
             <td>
                 <ng-container *ngFor="let addr of user.address;">
-                    {{addr}} / <br> 
+                    {{addr}} / <br>
                 </ng-container>
             </td>
             <td>
