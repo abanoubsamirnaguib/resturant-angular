@@ -29,7 +29,7 @@
 </section> -->
 
 
-<div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
       <div class="header-contents">
@@ -139,7 +139,7 @@
   </header>
 </div>
 
-<div class="fixed-header-box sticky-header-state-reset" *ngIf="_user.isAdmin">
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
       <div class="header-contents">

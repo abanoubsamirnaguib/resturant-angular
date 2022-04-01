@@ -19,10 +19,10 @@ export class UserService {
     return this._http.post(this.url+"/login", data)
   }
   logout():Observable<any>{
-    return this._http.get(this.url+"/logout")
+    return this._http.post(this.url+"/logout",null)
   }
   logoutAll():Observable<any>{
-    return this._http.get(this.url+"/logoutAll")
+    return this._http.post(this.url+"/logoutAll" , null)
   }
   alluser():Observable<any>{
     return this._http.get(this.url+"/alluser")
