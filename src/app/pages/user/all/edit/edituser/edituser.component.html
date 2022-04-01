@@ -1,12 +1,10 @@
-<!-- <p>add works!</p> -->
 <div class="container">
-    
     <form #register="ngForm" (ngSubmit)="onSubmit(register)">
         <div class="form-group row">
             <label for="inputName" class="col-sm-1-12 col-form-label">name</label>
             <div class="col-sm-1-12">
                 <input type="text" class="form-control" name="name" id="name" placeholder="" required minlength="3"
-                    maxlength="20" ngModel #name="ngModel">
+                    maxlength="20" [(ngModel)]="userData['name']" #name="ngModel" >
                 <div [ngClass]="{'alert alert-danger':name.invalid}" *ngIf="name.invalid&&(name.dirty||register.submitted)">
                     <p *ngIf="name.errors?.['required']">filed required</p>
                     <p *ngIf="name.errors?.['maxlength']">filed maxlength bigger than 20</p>
@@ -16,26 +14,30 @@
 
             <label for="inputName" class="col-sm-1-12 col-form-label"  >email</label>
             <div class="col-sm-1-12">
-                <input type="email" class="form-control" name="email" id="email" placeholder="" email ngModel #email="ngModel" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="" email [(ngModel)]="userData['email']" #email="ngModel" required>
             </div>
-            <label for="inputName" class="col-sm-1-12 col-form-label" >password</label>
+            <!-- <label for="inputName" class="col-sm-1-12 col-form-label" >password</label>
             <div class="col-sm-1-12">
-                <input type="password" class="form-control" name="password" id="password" placeholder="" ngModel #password="ngModel" required >
-            </div>
+                <input type="password" class="form-control" name="password" id="password" placeholder="" [(ngModel)]="userData['password']" #password="ngModel" required >
+            </div> -->
             <label for="inputName" class="col-sm-1-12 col-form-label"  >phone</label>
             <div class="col-sm-1-12">
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="" [(ngModel)]="numphone" #phone (input)="checkphone(phone.value)" required minlength="10" maxlength="20">
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="" [(ngModel)]="userData['phone'][0]" #phone="ngModel"  required minlength="10" maxlength="20">
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="" [(ngModel)]="userData['phone'][1]" #phone="ngModel"  required minlength="10" maxlength="20">
+                
             </div>
             <label for="inputName" class="col-sm-1-12 col-form-label" >adress</label>
             <div class="col-sm-1-12">
-                <input type="text" class="form-control" name="address" id="address" placeholder="" ngModel #address="ngModel">
+                <div *ngFor="let addr of userData['address'];let e=index" >
+                    <input type="text" class="form-control" name="address" id="address" placeholder="" [(ngModel)]="userData['address'][e]" #address="ngModel" [value]="addr">
+                </div>
             </div>
             <div class="form-check form-check-inline">gender:
                 <label class="form-check-label">male
-                    <input class="form-radio-input" type="radio" name="gender" id="gender" value="male" ngModel #gender="ngModel" required>
+                    <input class="form-radio-input" type="radio" name="gender" id="gender" value="male" [(ngModel)]="userData['gender']" #gender="ngModel" required [checked]="userData['gender']=='male'">
                 </label>
                 <label class="form-check-label">female
-                    <input class="form-radio-input" type="radio" name="gender" id="gender" value="female" ngModel #gender="ngModel" required>
+                    <input class="form-radio-input" type="radio" name="gender" id="gender" value="female" [(ngModel)]="userData['gender']" #gender="ngModel" required [checked]="userData['gender']=='female'">
                 </label>
             </div>
 

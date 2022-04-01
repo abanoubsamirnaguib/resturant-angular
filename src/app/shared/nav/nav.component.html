@@ -1,24 +1,145 @@
-<!-- <nav class="nav justify-content-center" *ngIf="_user.islogin">
-  <a class="nav-link" routerLink="user/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >all user</a>
-  <a class="nav-link " routerLink="user/profile" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact:true}" >profile</a>
-  <a class="nav-link " routerLink="user/add" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >add</a>
-  <a class="nav-link " routerLink="user/addFood" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact:true}" >addfood</a>
+<!-- <section *ngIf="_user.isAdmin">
+  <nav class="nav justify-content-center" *ngIf="!_user.islogin">
+    <a class="nav-link" routerLink="user/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">all
+      user</a>
+
+    <a class="nav-link " routerLink="user/profile" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">profile</a>
+
+    <a class="nav-link " routerLink="user/add" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">add</a>
+
+    <a class="nav-link " routerLink="user/addFood" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">addfood</a>
     <span>{{_user.userdata.name}}</span>
-  <a class="nav-link " routerLink="user/logout" >logout</a>
 
-</nav>
+    <a class="nav-link " routerLink="user/logout">logout</a>
 
-<nav class="nav justify-content-center" *ngIf="!_user.islogin">
-  <a class="nav-link " routerLink="user/register" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact:true}">register</a>
-  <a class="nav-link " routerLink="user/login" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact:true}">login</a>
-</nav> -->
+  </nav>
+
+  <nav class="nav justify-content-center" *ngIf="_user.islogin">
+
+    <a class="nav-link " routerLink="user/register" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">register</a>
+
+    <a class="nav-link " routerLink="user/login" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}">login</a>
+
+  </nav>
+</section> -->
 
 
-<div class="fixed-header-box sticky-header-state-reset">
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="_user.isAdmin">
+  <header class="main-header layout-logo-menu header-content-wrapper">
+    <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
+      <div class="header-contents">
+        <div class="first-row">
+          <div class="logo-wrapper">
+            <div class="logo-tagline">
+              <a routerLink="/" title="Délicious" class="logo text-logo" style="min-width:0px">Lina </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="second-row has-search">
+          <div id="menus">
+            <nav id="main-menu">
+              <div id="mega-menu-wrap-menu-header" class="mega-menu-wrap">
+                <div class="mega-menu-toggle">
+                  <div class="mega-toggle-blocks-left"></div>
+                  <div class="mega-toggle-blocks-center"></div>
+                  <div class="mega-toggle-blocks-right">
+                    <div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1'
+                      tabindex='0'><span class='mega-toggle-label' role='button' aria-expanded='false'><span
+                          class='mega-toggle-label-closed'></span><span class='mega-toggle-label-open'></span></span>
+                    </div>
+                  </div>
+                </div>
+                <ul id="mega-menu-menu-header" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js"
+                  data-event="hover_intent" data-effect="slide" data-effect-speed="200" data-effect-mobile="disabled"
+                  data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go"
+                  data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="900"
+                  data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300"
+                  data-hover-intent-interval="100">
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-11673'><a class="mega-menu-link"
+                    routerLink="user/All" aria-haspopup="true" aria-expanded="false" tabindex="0">All User<span
+                        class="mega-indicator"></span></a>
+
+                  </li>
+
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-8021'><a class="mega-menu-link"
+                      routerLink="user/AllFood" aria-haspopup="true" aria-expanded="false" tabindex="0">Menu<span
+                        class="mega-indicator"></span></a>
+                  </li>
+   
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-8021'><a class="mega-menu-link"
+                      routerLink="user/Orders" aria-haspopup="true" aria-expanded="false" tabindex="0">Orders<span
+                        class="mega-indicator"></span></a>
+                  </li>
+
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7884'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-7884'><a class="mega-menu-link"
+                      routerLink="user/add" aria-haspopup="true" aria-expanded="false" tabindex="0">add User<span
+                        class="mega-indicator"></span></a>
+                  </li>
+
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
+                    routerLink="user/addFood" tabindex="0">addFood</a></li>
+                    <!-- routerLink="user/logout" -->
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                       (click)="logout()" tabindex="0">logout
+                    </a></li>
+                  <li *ngIf="!_user.islogin"
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      routerLink="user/register" tabindex="0">register
+                    </a></li>
+                  <li *ngIf="!_user.islogin"
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      routerLink="user/login" tabindex="0">login
+                    </a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="cart-dropdown">
+          <div class="cart-dropdown-inner">
+            <a class="vamtam-cart-dropdown-link icon theme" routerLink="#">
+              <span class="icon theme">cart</span>
+              <span class="products cart-empty">0</span>
+            </a>
+            <div class="widget woocommerce widget_shopping_cart">
+              <div class="widget_shopping_cart_content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="fixed-header-box sticky-header-state-reset" *ngIf="!_user.isAdmin">
   <header class="main-header layout-logo-menu header-content-wrapper">
     <div class="limit-wrapper header-maybe-limit-wrapper header-padding">
       <div class="header-contents">
@@ -60,24 +181,44 @@
                   </li>
 
                   <li
-                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021' routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673" [routerLinkActiveOptions]="{exact:true}"
-                    id='mega-menu-item-8021'><a class="mega-menu-link" routerLink="/menu" aria-haspopup="true"
-                      aria-expanded="false" tabindex="0">Menu<span class="mega-indicator"></span></a>
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page  mega-align-bottom-left mega-menu-flyout mega-menu-item-8021'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-8021'><a class="mega-menu-link"
+                      routerLink="/menu" aria-haspopup="true" aria-expanded="false" tabindex="0">Menu<span
+                        class="mega-indicator"></span></a>
                   </li>
 
                   <li
-                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7884' routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673" [routerLinkActiveOptions]="{exact:true}"
-                    id='mega-menu-item-7884'><a class="mega-menu-link" routerLink="gallary" aria-haspopup="true"
-                      aria-expanded="false" tabindex="0">Gallery<span class="mega-indicator"></span></a>
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7884'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-7884'><a class="mega-menu-link"
+                      routerLink="gallary" aria-haspopup="true" aria-expanded="false" tabindex="0">Gallery<span
+                        class="mega-indicator"></span></a>
                   </li>
 
                   <li
-                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975' routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673" [routerLinkActiveOptions]="{exact:true}"
-                    id='mega-menu-item-9975'><a class="mega-menu-link" routerLink="shop" tabindex="0">Shop</a></li>
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-9975'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-9975'><a class="mega-menu-link"
+                      routerLink="shop" tabindex="0">Shop</a></li>
                   <li
-                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213' routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673" [routerLinkActiveOptions]="{exact:true}"
-                    id='mega-menu-item-10213'><a class="mega-menu-link" routerLink="contentus" tabindex="0">Contact
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      routerLink="contentus" tabindex="0">Contact
                       Us</a></li>
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      routerLink="user/register" tabindex="0">register
+                    </a></li>
+                  <li
+                    class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10213'
+                    routerLinkActive="mega-current-menu-item mega-page_item mega-page-item-11057 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11673"
+                    [routerLinkActiveOptions]="{exact:true}" id='mega-menu-item-10213'><a class="mega-menu-link"
+                      routerLink="user/login" tabindex="0">login
+                    </a></li>
                 </ul>
               </div>
             </nav>

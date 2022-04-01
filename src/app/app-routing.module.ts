@@ -1,3 +1,6 @@
+import { EditfoodComponent } from './pages/user/all-food/editfood/editfood.component';
+import { AllFoodComponent } from './pages/user/all-food/all-food.component';
+import { EdituserComponent } from './pages/user/all/edit/edituser/edituser.component';
 import { CartComponent } from './web/cart/cart.component';
 import { ContentusComponent } from './web/contentus/contentus.component';
 import { ShopComponent } from './web/shop/shop.component';
@@ -19,7 +22,8 @@ const routes: Routes = [
   // {path:"home", component:HomeComponent},
   {
      path: 'user', children: [
-       { path: '', component: AllComponent },
+       { path: 'All',children: [{path:"", component: AllComponent},{path:"edit/:id", component: EdituserComponent}] },
+       { path: 'AllFood',children: [{path:"", component: AllFoodComponent},{path:"editFood/:id", component: EditfoodComponent}] },
        { path: 'register', component: RegisterComponent },
        { path: 'add', component: AddComponent },
        { path: 'addFood', component: AddfoodComponent },
@@ -30,6 +34,8 @@ const routes: Routes = [
        { path: 'logout/:id', component: LogoutComponent },
      ]
    },
+
+   {path:"", component:HomeComponent},
    {path:"home", component:HomeComponent},
    {path:"menu", component:MenuComponent},
    {path:"gallary", component:GalaryComponent},

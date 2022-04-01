@@ -8,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public _user:UserService) { }
+  constructor(public _user: UserService) { }
 
   ngOnInit(): void {
   }
-
+  logout() {
+    this._user.logout().subscribe({
+      next: (res) => {
+        this._user.userdata = null
+        console.log(res)
+      },
+      error: (res) => {
+        console.log(res)
+      },
+      complete: () => {
+        this._user.islogin = false
+        localStorage.removeItem("apptoken")
+        console.log("logout")
+      }
+    })
+  }
 }

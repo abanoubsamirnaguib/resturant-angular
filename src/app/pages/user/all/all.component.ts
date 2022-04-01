@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from './../../../servies/user.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllComponent implements OnInit {
 
-  constructor(private _user:UserService,private _router:Router) { }
-  users:any[]=[]
+  constructor(private _user: UserService, private _routes: Router) { }
+  users: any[] = []
   ngOnInit(): void {
     this._user.alluser().subscribe({
-      next:(res)=>{this.users=res.data},
-      error:(e)=>{console.log(e.message);this._router.navigateByUrl("user/login") }
+      next: (res) => { this.users = res.data },
+      error: (e) => { console.log(e.message); this._routes.navigateByUrl("user/login") }
     })
   }
 
-
+  delete(id: string) {
+    console.log(id);
+    // this._user.deleteUser(id)
+  }
 }

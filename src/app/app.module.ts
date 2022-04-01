@@ -22,6 +22,9 @@ import { ShopComponent } from './web/shop/shop.component';
 import { GalaryComponent } from './web/galary/galary.component';
 import { CartComponent } from './web/cart/cart.component';
 import { ContentusComponent } from './web/contentus/contentus.component';
+import { EdituserComponent } from './pages/user/all/edit/edituser/edituser.component';
+import { AllFoodComponent } from './pages/user/all-food/all-food.component';
+import { EditfoodComponent } from './pages/user/all-food/editfood/editfood.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { ContentusComponent } from './web/contentus/contentus.component';
     ShopComponent,
     GalaryComponent,
     CartComponent,
-    ContentusComponent
+    ContentusComponent,
+    EdituserComponent,
+    AllFoodComponent,
+    EditfoodComponent
   ],
   imports: [
     BrowserModule,

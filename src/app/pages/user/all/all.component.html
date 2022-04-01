@@ -7,6 +7,7 @@
             <th>gender</th>
             <th>address</th>
             <th>phone</th>
+            <th>action</th>
         </tr>
     </thead>
     <tbody>
@@ -17,13 +18,17 @@
             <td>{{user.gender}}</td>
             <td>
                 <ng-container *ngFor="let addr of user.address;">
-                    {{addr}}
+                    {{addr}} / <br> 
                 </ng-container>
             </td>
             <td>
                 <ng-container *ngFor="let phon of user.phone;">
-            <td> {{phon}}</td>
+            <td> {{phon}} / <br> </td>
             </ng-container>
+            </td>
+            <td>
+                <button class="btn btn-primary" routerLink="edit/{{user._id}}">edit</button>
+                <button class="btn btn-danger ms-3" (click)="delete(user._id)">delete</button>
             </td>
     </tbody>
 </table>

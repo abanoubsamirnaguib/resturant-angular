@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>image</th>
+            <th>descreption</th>
+            <th>price</th>
+            <th>rate</th>
+            <th>likes</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let food of foods; let i = index">
+            <td>{{i}}</td>
+            <td>{{food.name}}</td>
+            <td class="w-25"><img class="" [src]="food.image??'assets/img/photo-gourmet-4.jpg'" alt=""> </td>
+            <td>{{food.descreption}}</td>
+            <td>{{food.price}}</td>
+            <td>{{food.rate}}</td>
+            <td>{{food.likes}}</td>
+            <td>
+                <!-- <button class="btn btn-primary" routerLink="showFood/{{food._id}}">show</button> -->
+                <button class="btn btn-primary ms-3" routerLink="editFood/{{food._id}}">edit</button>
+                <button class="btn btn-danger ms-3" (click)="delete(food._id)">delete</button>
+            </td>
+    </tbody>
+</table>

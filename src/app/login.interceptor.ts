@@ -21,7 +21,7 @@ export class LoginInterceptor implements HttpInterceptor {
         headers:request.headers.set("Authorization",token),
       })
     }
-    console.log(request);
+    // console.log(request);
     return next.handle(request);
   }
 }
