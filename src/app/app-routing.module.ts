@@ -12,7 +12,7 @@ import { AddfoodComponent } from './pages/post/addfood/addfood.component';
 import { AddComponent } from './pages/post/add/add.component';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { LoginComponent } from './pages/user/login/login.component';
-import { LogoutComponent } from './pages/user/logout/logout.component';
+import { OrdersComponent } from './pages/user/logout/Orders.component';
 import { EditComponent } from './pages/user/edit/edit.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AllComponent } from './pages/user/all/all.component';
@@ -22,28 +22,28 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   // {path:"home", component:HomeComponent},
   {
-     path: 'user', children: [
-       { path: 'All',children: [{path:"", component: AllComponent},{path:"edit/:id", component: EdituserComponent}] },
-       { path: 'AllFood',children: [{path:"", component: AllFoodComponent},{path:"editFood/:id", component: EditfoodComponent}] },
-       { path: 'register', component: RegisterComponent },
-       { path: 'add', component: AddComponent },
-       { path: 'addFood', component: AddfoodComponent },
-       { path: 'profile', component: SingleComponent },
-       { path: 'login', component: LoginComponent },
-       { path: 'show/:id', component: SingleComponent },
-       { path: 'edit/:id', component: EditComponent },
-       { path: 'logout/:id', component: LogoutComponent },
-     ]
-   },
+    path: 'user', children: [
+      { path: 'All', children: [{ path: "", component: AllComponent }, { path: "edit/:id", component: EdituserComponent }] },
+      { path: 'AllFood', children: [{ path: "", component: AllFoodComponent }, { path: "editFood/:id", component: EditfoodComponent }] },
+      { path: 'register', component: RegisterComponent },
+      { path: 'add', component: AddComponent },
+      { path: 'addFood', component: AddfoodComponent },
+      { path: 'profile', component: SingleComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'show/:id', component: SingleComponent },
+      { path: 'edit/:id', component: EditComponent },
+      { path: 'Orders', component: OrdersComponent },
+    ]
+  },
 
-   {path:"", component:HomeComponent},
-   {path:"home", component:HomeComponent},
-   {path:"menu", component:MenuComponent},
-   {path:"gallary", component:GalaryComponent},
-   {path:"shop", component:ShopComponent},
-   {path:"contentus", component:ContentusComponent},
-   {path:"cart", component:CartComponent},
-   {path:"food", component:FoodComponent},
+  { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
+  { path: "menu", component: MenuComponent },
+  { path: "gallary", component: GalaryComponent },
+  { path: "shop", component: ShopComponent },
+  { path: "contentus", component: ContentusComponent },
+  { path: "cart", component: CartComponent },
+  { path: "food", component: FoodComponent },
 ];
 
 @NgModule({

@@ -18,6 +18,8 @@ export class EdituserComponent implements OnInit {
     address: [""],
     gender: ""
   }
+  myFile: any = null
+
   ngOnInit(): void { }
   constructor(private _user: UserService, private _router: Router, private _routes: ActivatedRoute) {
 
@@ -31,18 +33,38 @@ export class EdituserComponent implements OnInit {
       complete: () => { console.log("user fetched") }
     })
   }
-  checkphone(phone: string) {
-    console.log(phone);
+  // checkphone(phone: string) {
+  //   console.log(phone);
+  // }
+  onUploadFile(event: any) {
+    this.myFile = event.target.files[0]
   }
   onSubmit(register: NgForm) {
     console.log(register);
     if (register.valid) {
-
       this._user.edituser(this._routes.snapshot.params['id'], this.userData).subscribe(
         {
-          next: (res) => { console.log(res); },
+          next: (res) => {
+            console.log(res);
+            if (this.myFile != null) {
+              const myForm = new FormData()
+              myForm.append("filePic", this.myFile, this.myFile.name)
+              register.value.foodfilePic = myForm.get('filePic')
+              console.log(res.data._id);
+              this._user.changeImg(res.data._id, myForm).subscribe({
+                next: (res: any) => {
+                  console.log(res);
+                },
+                error: (err) => console.log(err),
+                complete: () => {
+                  console.log("photo added");
+
+                }
+              })
+            }
+          },
           error: (err) => console.log(err),
-          complete:()=>{
+          complete: () => {
             this._router.navigateByUrl("/user/All")
           }
         }
