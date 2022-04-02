@@ -20,131 +20,24 @@
 </div>
 <div>.</div>
 
+
 <div class="row">
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happymeal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
+    <ng-container *ngFor="let food of foods; let i = index">
+    <div class="col-md-4">
+      <div class="meals">
+        <a routerLink="/user/showFood/{{food._id}}">
+          <img class="w-75 h-75 image-fluid " style="width: 90%;height: 90%;" [src]="food.image?('http://localhost:3000/'+food.image):'assets/img/photo-gourmet-4.jpg'" alt="">
+          <div class="caption">
+            <div>
+              <h5 class=" order-4 d-inline me-5">{{food.name}}</h5>
+              <span class="badge bg-info h6 ms-auto ">{{food.price}} L.E</span>
+            </div>
+            <p></p>
+        
+            <p > descreption : {{food.descreption}}</p>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="/*.jpg">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="food/#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happymeal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="/*.jpg">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="food/#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happymeal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="/*.jpg">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="food/#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happymeal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="#">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="meals">
-      <a href="/*.jpg">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happy meal" style="width:90%">
-        <div class="caption">
-          <p>sea food</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  </ng-container>
 </div>

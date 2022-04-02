@@ -24,8 +24,4 @@ export class OrdersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deliver(orderStatus:boolean){
-    orderStatus !== orderStatus
-    console.log(orderStatus);
-  }
 }

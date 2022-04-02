@@ -1,4 +1,4 @@
-<form [formGroup]="profileForm" (ngSubmit)="login($event)">
+<form class="form-control w-50 mx-auto" [formGroup]="profileForm" (ngSubmit)="login($event)">
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="" formControlName="email">
@@ -11,3 +11,12 @@
     </div>
     <button class="btn btn-primary" type="submit" [disabled]="profileForm.invalid">send</button>
 </form>
+
+<div class="card text-left w-50 mx-auto">
+  <div class="card-body">
+    <h4 class="card-title">login and register as admin </h4>
+    <p class="card-text">email:  superAdmin@gmail.com</p>
+    <p class="card-text">password: 123456 </p>
+  </div>
+</div>
+<br>

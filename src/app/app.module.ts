@@ -9,7 +9,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { LoginComponent } from './pages/user/login/login.component';
-import { EditComponent } from './pages/user/edit/edit.component';
 import { AllComponent } from './pages/user/all/all.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AddComponent } from './pages/post/add/add.component';
@@ -35,7 +34,6 @@ import { FoodComponent } from './web/shop/food/food.component';
     FooterComponent,
     RegisterComponent,
     LoginComponent,
-    EditComponent,
     AllComponent,
     SingleComponent,
     AddComponent,

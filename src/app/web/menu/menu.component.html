@@ -10,50 +10,58 @@
       <div class="carousel-caption d-none d-md-block bg-light">
         <h5>main dish</h5>
         <div class="row">
+          <ng-container *ngFor="let food of foods; let i = index">
           <div class="col-md-9 ">
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-            <h6>Alder Grilled Chinook Salmon</h6>
-            <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
-          <h6>Alder Grilled Chinook Salmon</h6>
-          <p>Candied salmon, basil potato puree, baby kale marsala eggplant confit & balsamic butter sauce.</p>
+            <h4>{{food.name}}</h4>
+            <p class="text-muted">{{food.descreption}}</p>
+         
           </div>
           <div class="col-md-3" >
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
-            <h4>56$</h4>
+            <h4>{{food.price}} L.E</h4>
+          
           </div>
+        </ng-container>
         </div>
-
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
       <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block bg-light">
         <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <div class="row">
+
+        <ng-container *ngFor="let food of foods; let i = index">
+          <div class="col-md-9 ">
+            <h4>{{food.name}}</h4>
+            <p class="text-muted">{{food.descreption}}</p>
+         
+          </div>
+          <div class="col-md-3" >
+            <h4>{{food.price}} L.E</h4>
+          
+          </div>
+        </ng-container>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block bg-light">
         <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <div class="row">
+
+          <ng-container *ngFor="let food of foods; let i = index">
+            <div class="col-md-9 ">
+              <h4>{{food.name}}</h4>
+              <p class="text-muted">{{food.descreption}}</p>
+           
+            </div>
+            <div class="col-md-3" >
+              <h4>{{food.price}} L.E</h4>
+            
+            </div>
+          </ng-container>
+          </div>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
 
   })
-  constructor(private _userser: UserService, private _router:Router){ }
+  constructor(private _userser: UserService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,17 +26,27 @@ export class LoginComponent implements OnInit {
     this._userser.login(this.profileForm.value).subscribe(
       {
         next: (res) => {
-          localStorage.setItem("apptoken",res.data.token)
-          this._userser.userdata=res.data.user
+          localStorage.setItem("apptoken", res.data.token)
+          this._userser.userdata = res.data.user
           console.log(res)
+         
         },
         error: (res) => {
           console.log(res)
-          this._userser.islogin=false
+          this._userser.islogin = false
         },
-        complete:()=>{console.log("done")
-        this._userser.islogin=true
-        this._router.navigateByUrl("/user")
+        complete: () => {
+          console.log("done")
+          this._userser.islogin = true
+          if (this._userser.userdata.email == 'superadmin@gmail.com') {
+            this._userser.isAdmin = true;
+            console.log("admin");
+            this._router.navigateByUrl("/user/All")
+          }else{
+            this._userser.isAdmin = false;
+            this._router.navigateByUrl("/shop")
+          }
+          
         }
 
       }

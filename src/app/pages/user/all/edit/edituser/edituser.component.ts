@@ -1,3 +1,4 @@
+import { user } from './../../../../../interfaces/user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './../../../../../servies/user.service';
 import { NgForm } from '@angular/forms';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class EdituserComponent implements OnInit {
 
   numphone: string = "123"
-  userData: any = {
+  userData: user = {
     name: "",
     email: "",
     phone: [""],

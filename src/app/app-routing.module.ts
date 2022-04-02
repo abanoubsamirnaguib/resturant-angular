@@ -13,7 +13,6 @@ import { AddComponent } from './pages/post/add/add.component';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { LoginComponent } from './pages/user/login/login.component';
 import { OrdersComponent } from './pages/user/Orders/Orders.component';
-import { EditComponent } from './pages/user/edit/edit.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AllComponent } from './pages/user/all/all.component';
 import { NgModule } from '@angular/core';
@@ -30,8 +29,7 @@ const routes: Routes = [
       { path: 'addFood', component: AddfoodComponent },
       { path: 'profile', component: SingleComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'show/:id', component: SingleComponent },
-      { path: 'edit/:id', component: EditComponent },
+      { path: 'showFood/:id', component: FoodComponent },
       { path: 'Orders', component: OrdersComponent },
     ]
   },
@@ -43,7 +41,7 @@ const routes: Routes = [
   { path: "shop", component: ShopComponent },
   { path: "contentus", component: ContentusComponent },
   { path: "cart", component: CartComponent },
-  { path: "food", component: FoodComponent },
+  // { path: "food", component: FoodComponent },
 ];
 
 @NgModule({

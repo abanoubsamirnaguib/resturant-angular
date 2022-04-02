@@ -9,8 +9,9 @@ export class UserService {
   url:string="http://localhost:3000"
   public userdata:any
   public islogin:boolean=false
-  public isAdmin:boolean=true
-  
+  public isAdmin:boolean=false
+  public cart: any[]=[]
+
   constructor(private _http:HttpClient) { }
   register(data:any):Observable<any>{
     return this._http.post(this.url+"/register", data)
@@ -44,5 +45,14 @@ export class UserService {
   }
   Orders(): Observable<any> {
     return this._http.get(this.url + "/allOrder" )
+  }
+  addToCart(data:any): Observable<any> {
+    return this._http.post(this.url + "/addToCart", data)
+  }
+  delFromCart(id:string): Observable<any> {
+    return this._http.delete(this.url + "/delFromCart/"+id)
+  }
+  addToOrder(): Observable<any> {
+    return this._http.post(this.url + "/AddToOrder/",null)
   }
 }

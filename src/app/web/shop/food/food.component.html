@@ -1,42 +1,64 @@
 <div class="header">
-  <h1>Carrot, Orange and Sesame Salad</h1>
+  <h1>{{food.name}}</h1>
 
 </div>
 <div class="row">
   <div class="col-md-6">
     <div class="meal">
-        <img src="https://vip-restaurant.vamtam.com/wp-content/uploads/2015/01/slider-shop-bg.jpg" alt="happymeal" style="width:100%">
+      <img [src]="(food.image) ? ('http://localhost:3000/'+food.image) : 'assets/img/photo-gourmet-4.jpg'"
+        alt="happymeal" style="width:100%">
     </div>
   </div>
 
   <div class="col-md-6">
     <div class="caption">
-      <h6>50 l.e</h6>
-          <p>Macedonia or macédoine is a salad composed of small pieces
-             of fruit or vegetables. Fruit Macedonia is a fresh fruit salad and is a
-            common dessert in Greece, Romania, Spain, France, Italy and Latin America.</p>
+      <h6>Price : {{food.price}} l.E</h6>
+      <p>Discription : {{food.descreption}}</p>
+      
+      <ng-container *ngIf="!_user.isAdmin">
+         <p>Qantity : <input type="number" name="" id="" min="1" max="20" step="1" class="w-25" [(ngModel)]="Qantity"></p>
+        <button (click)="addTocart()" type="button" class="btn btn-warning"> add to cart <svg xmlns="http://www.w3.org/2000/svg" width="16" 
+            height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+            <path
+              d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+            <path
+              d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg></button>
+      </ng-container>
 
-            <button type="button" class="btn btn-warning"> add to cart  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
-              <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-            </svg></button>
-
-        </div>
     </div>
   </div>
+</div>
 
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
+<!-- rate:  {{food.rate}} -->
+<ng-container *ngIf="!_user.isAdmin" >
+  <button class="btn btn-primary" (click)="like()">
+    {{likemsg ? 'LIKED' : 'DISlIKED' }}
+  </button>
   <h4>Leave a Comment:</h4>
-  <form role="form">
+  <form role="form" #comment="ngForm" (ngSubmit)="addcommit(comment)">
     <div class="form-group">
-      <textarea class="form-control" rows="3" required></textarea>
+      <textarea name="content" class="form-control" rows="3" required #content="ngModel" ngModel></textarea>
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success" >Submit</button>
   </form>
-  <br><br>
+</ng-container>
 
-  <p><span class="badge">2</span> Comments:</p><br>
+<br><br>
 
+likes : {{food.likes}}
 
+<p>Comments:</p><br>
+<div *ngFor="let comment of food.comments">
+  <div class="card text-left">
+    <div class="card-body">
+      <h4 class="card-title">name : {{comment.username}} </h4>
+      <p class="card-text"> say :  {{comment.content}}</p>
+    </div>
+  </div>
+ <br>
+
+</div>

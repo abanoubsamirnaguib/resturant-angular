@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>name</th>
+            <th>image</th>
             <th>email</th>
             <th>gender</th>
             <th>address</th>
@@ -9,18 +10,22 @@
         </tr>
     </thead>
     <tbody>
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.gender}}</td>
-            <td>
-                <ng-container *ngFor="let addr of user.address;">
-                    {{addr}}
-                </ng-container>
-            </td>
-            <td>
-                <ng-container *ngFor="let phon of user.phone;">
-            <td> {{phon}}</td>
+
+        <td>{{user.name}}</td>
+        <td class="w-25 h-25"><img class="w-25 h-25" height="100" width="100"
+                [src]="(user.image) ? ('http://localhost:3000/'+user.image) : 'assets/img/photo-gourmet-4.jpg'" alt="">
+        </td>
+        <td>{{user.email}}</td>
+        <td>{{user.gender}}</td>
+        <td>
+            <ng-container *ngFor="let addr of user.address;">
+                {{addr}}
             </ng-container>
-            </td>
+        </td>
+        <td>
+            <ng-container *ngFor="let phon of user.phone;">
+        <td> {{phon}}</td>
+        </ng-container>
+        </td>
     </tbody>
 </table>

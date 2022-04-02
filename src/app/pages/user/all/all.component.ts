@@ -1,3 +1,4 @@
+import { user } from './../../../interfaces/user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from './../../../servies/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AllComponent implements OnInit {
 
   constructor(private _user: UserService, private _routes: Router) { }
-  users: any[] = []
+  users: user[] = []
   ngOnInit(): void {
     this._user.alluser().subscribe({
       next: (res) => { this.users = res.data },

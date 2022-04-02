@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class foodService {
 
   constructor(private _http: HttpClient) { }
-
   url: string = "http://localhost:3000/food"
+
 
   getallfood(): Observable<any> {
     return this._http.get(this.url + "/showall");
@@ -23,13 +23,23 @@ export class foodService {
   deleteFood(id: string): Observable<any> {
     return this._http.delete(this.url + "/delete/" + id)
   }
-  addFood(data:any): Observable<any> {
-    return this._http.post(this.url + "/add/" , data)
+  addFood(data: any): Observable<any> {
+    return this._http.post(this.url + "/add/", data)
   }
-  uploadImg(data:any): Observable<any> {
-    return this._http.post(this.url + "/addFoodPic" , data)
+  uploadImg(data: any): Observable<any> {
+    return this._http.post(this.url + "/addFoodPic", data)
   }
-  changeImg(id:string , data:any): Observable<any> {
-    return this._http.patch(this.url + "/changePic/"+id, data )
+  changeImg(id: string, data: any): Observable<any> {
+    return this._http.patch(this.url + "/changePic/" + id, data)
   }
+  addcomment(id: string, data: any): Observable<any> {
+    return this._http.post(this.url + "/AddComment/" + id, data)
+  }
+  addlike(id: string): Observable<any> {
+    return this._http.post(this.url + "/like/" + id, null)
+  }
+  dislike(id: string): Observable<any> {
+    return this._http.post(this.url + "/dislike/" + id, null)
+  }
+ 
 }
