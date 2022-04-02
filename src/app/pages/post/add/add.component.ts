@@ -31,8 +31,8 @@ export class AddComponent implements OnInit {
             const myForm = new FormData()
             myForm.append("filePic", this.myFile, this.myFile.name)
             register.value.foodfilePic = myForm.get('filePic')
-            // console.log(add.value.foodfilePic);
-            this.UserSer.changeImg(res.data._id, myForm).subscribe({
+            console.log(res.data._id);
+            this.UserSer.changeImg(res.data._id , myForm).subscribe({
               next: (res:any) => {
                 console.log(res);
               },

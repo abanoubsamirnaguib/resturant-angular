@@ -14,7 +14,7 @@ import { AllComponent } from './pages/user/all/all.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AddComponent } from './pages/post/add/add.component';
 import { AddfoodComponent } from './pages/post/addfood/addfood.component';
-import { LogoutComponent } from './pages/user/logout/logout.component';
+import { OrdersComponent } from './pages/user/logout/Orders.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './web/home/home.component';
 import { MenuComponent } from './web/menu/menu.component';
@@ -40,7 +40,7 @@ import { FoodComponent } from './web/shop/food/food.component';
     SingleComponent,
     AddComponent,
     AddfoodComponent,
-    LogoutComponent,
+    OrdersComponent,
     HomeComponent,
     MenuComponent,
     ShopComponent,
