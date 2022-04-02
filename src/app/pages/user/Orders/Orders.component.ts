@@ -1,4 +1,4 @@
-git import { UserService } from './../../../servies/user.service';
+import { UserService } from './../../../servies/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
