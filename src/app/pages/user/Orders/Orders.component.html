@@ -1,0 +1,42 @@
+<!-- <p>logout works!</p> -->
+
+<div class="jumbotron bg-light px-5">
+    <h1 class="display-4 text-capitalize">user orders</h1>
+    <p class="lead">ths is users orders </p>
+    <hr class="my-4">
+    <p>Orders</p>
+    <ng-container *ngFor="let order of orders">
+        <h4>{{order.userName| titlecase}}</h4>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                userOrders
+            </div>
+            <ul class="list-group list-group-flush">
+                <ng-container *ngFor="let ordr of order.userOrders; let i=index">
+                    <h5 class="text-capitalize">order number {{i+1}}</h5>
+                    <li class="list-group-item">
+                        <!-- {{ordr.orderStatus}} -->
+                        <button (click)="deliver(ordr.orderStatus)"  class="mx-auto px-5" [ngClass]="{'btn btn-success':ordr.orderStatus,'btn btn-danger':!ordr.orderStatus }">Delevired</button>
+                     </li>
+                    <ng-container *ngFor="let ord of ordr.details">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              food Name :  {{ord.foodName}}
+                            </li>
+                            <li class="list-group-item">
+                              price :  {{ord.price}}
+                            </li>
+                            <li class="list-group-item">
+                              quantity :  {{ord.quantity}}
+                            </li>
+                            <li class="list-group-item">
+                              total Price :  {{ord.totalPrice}}
+                            </li>
+                        </ul>
+                        <hr>
+                    </ng-container>
+                </ng-container>
+            </ul>
+        </div>
+    </ng-container>
+    </div>

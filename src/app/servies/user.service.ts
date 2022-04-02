@@ -42,4 +42,7 @@ export class UserService {
   changeImg(id:string , data:any): Observable<any> {
     return this._http.patch(this.url + "/changePic/"+id, data )
   }
+  Orders(): Observable<any> {
+    return this._http.get(this.url + "/allOrder" )
+  }
 }

@@ -12,7 +12,7 @@ import { AddfoodComponent } from './pages/post/addfood/addfood.component';
 import { AddComponent } from './pages/post/add/add.component';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { LoginComponent } from './pages/user/login/login.component';
-import { OrdersComponent } from './pages/user/logout/Orders.component';
+import { OrdersComponent } from './pages/user/Orders/Orders.component';
 import { EditComponent } from './pages/user/edit/edit.component';
 import { SingleComponent } from './pages/user/single/single.component';
 import { AllComponent } from './pages/user/all/all.component';
