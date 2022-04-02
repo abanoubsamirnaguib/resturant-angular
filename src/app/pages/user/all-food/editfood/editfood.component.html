@@ -17,15 +17,25 @@
             <label for="inputName" class="col-sm-1-12 col-form-label">descreption</label>
             <div class="col-sm-1-12">
                 <textarea type="text" class="form-control" name="descreption" id="descreption" placeholder=""
-                    [(ngModel)]="food['descreption']" #descreption="ngModel" required>
+                    [(ngModel)]="food['descreption']" #descreption="ngModel" required minlength="5" maxlength="300">
            </textarea>
-
+                <div [ngClass]="{'alert alert-danger':descreption.invalid}"
+                    *ngIf="descreption.invalid&&(descreption.dirty||edit.submitted)">
+                    <p *ngIf="descreption.errors?.['required']">filed required</p>
+                    <p *ngIf="descreption.errors?.['maxlength']">filed maxlength bigger than 300</p>
+                    <p *ngIf="descreption.errors?.['minlength']">filed maxlength less than 5 </p>
+                </div>
             </div>
 
             <label for="inputName" class="col-sm-1-12 col-form-label">price</label>
             <div class="col-sm-1-12">
                 <input type="number" class="form-control" name="price" id="price" placeholder=""
                     [(ngModel)]="food['price']" #price="ngModel" required>
+
+                <div [ngClass]="{'alert alert-danger':price.invalid}"
+                    *ngIf="price.invalid&&(price.dirty||edit.submitted)">
+                    <p *ngIf="price.errors?.['required']">filed required</p>
+                </div>
             </div>
 
             <label for="inputName" class="col-sm-1-12 col-form-label">image</label>
